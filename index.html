@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento Elétrica Kaiser</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+<!-- vvvv aqui tu muda a imagem do icone do site-->
+<link rel="icon" type="image/jpg" href="/image/Kaiser-icon.jpg">
+
+<body>
+
+<div class="container">
+    <!-- Cabeçalho -->
+    <div class="header">
+        <div class="logo">Kaiser</div>
+        <h1>Orçamento Elétrica Kaiser</h1>
+        <img src="image/Kaiser.png" alt="Logo da empresa" class="logo-img">
+    </div>
+
+    <!-- Informações do Cliente -->
+    <div class="info-grid">
+        <div>
+            <label>Cliente</label>
+            <input type="text" id="cliente" placeholder="Nome completo do cliente" />
+        </div>
+        <div>
+            <label>Contato</label>
+            <input type="text" id="contato" placeholder="(51) 98451-8695 | cliente@email.com" />
+        </div>
+        <div>
+            <label>Endereço do Serviço</label>
+            <input type="text" id="endereco" placeholder="Rua, número, bairro - Torres/RS" />
+        </div>
+        <div>
+            <label>Data do Orçamento</label>
+            <input type="date" id="data" />
+        </div>
+        <div>
+            <label>Nº do Orçamento</label>
+            <input type="text" id="orcamento-num" placeholder="Ex: KAISER-2511-001" readonly />
+        </div>
+        <div>
+            <label>Validade</label>
+            <select id="validade">
+                <option value="7">7 dias</option>
+                <option value="15" selected>15 dias</option>
+                <option value="30">30 dias</option>
+                <option value="60">60 dias</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Tabela de Itens -->
+    <table id="tabela-itens">
+        <thead>
+            <tr>
+                <th style="width: 35%;">Descrição do Serviço</th>
+                <th style="width: 12%;">Quantidade</th>
+                <th style="width: 12%;">Unidade</th>
+                <th style="width: 15%;">Valor Unitário (R$)</th>
+                <th style="width: 15%;">Subtotal (R$)</th>
+                <th style="width: 11%;">Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Linhas dinâmicas -->
+        </tbody>
+    </table>
+
+    <div style="padding: 0 20px 20px;">
+        <button class="btn btn-add" onclick="adicionarLinha()">+ Adicionar Serviço</button>
+        <button class="btn btn-add" onclick="adicionarDesconto()">+ Adicionar Desconto</button>
+    </div>
+
+    <!-- Total -->
+    <div class="total-section">
+        <!-- AQUI EMBAIXO VEM O NOVO CONTAINER -->
+            <div id="desconto-container" style="padding: 0 20px 10px;"></div>
+        <div class="total">
+            TOTAL DO ORÇAMENTO: <span id="total-geral">R$ 0,00</span>
+        </div>
+    </div>
+    
+
+    <!-- Gerar PDF -->
+    <button class="btn btn-pdf" onclick="gerarPDF()">
+        Gerar Orçamento em PDF
+    </button>
+
+    <div class="footer">
+        Elétrica Kaiser | Torres, RS | CNPJ: 63.197.892/0001-82 | 
+        <a href="tel:+5551984518695">(51) 98451-8695</a> | 
+        <a href="mailto:eletricakaiser@gmail.com">eletricakaiser@gmail.com</a>
+    </div>
+</div>
+    <script src="script.js"></script>
+
+</body>
+</html>
